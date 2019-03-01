@@ -1,0 +1,35 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    project-server:
+      path: /server/**
+      service-id: project-server
+    project-client:
+      path: /client/**
+      serviceId: project-client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+server:
+  port: 8079
+
+spring:
+  application:
+    name: zuul-service
+    
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+ribbon:
+  ReadTimeout: 100000
+  ConnectTimeout: 100000 
+      
