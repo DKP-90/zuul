@@ -12,7 +12,7 @@ zuul:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://198.58.126.243:8761/eureka/
   instance:
     hostname: localhost
 
